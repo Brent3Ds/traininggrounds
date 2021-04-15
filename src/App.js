@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./components/Nav"
+import {useState} from "react"
+import InputBox from "./components/InputBox"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  return<div style={{margin:0}} >
+    <Nav />
+    <p style={{margin:"auto"}}>
+      Hello World
+    </p>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
-  );
+
+  <InputBox/>
+
+  </div>
 }
 
 export default App;
